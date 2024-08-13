@@ -3,22 +3,25 @@
     $username = $_POST['user'];  
     $password = $_POST['pass'];  
       
-        //to prevent from mysqli injection  
-        $username = stripcslashes($username);  
-        $password = stripcslashes($password);  
-        $username = mysqli_real_escape_string($con, $username);  
-        $password = mysqli_real_escape_string($con, $password);  
+    // To prevent SQL injection  
+    $username = stripcslashes($username);  
+    $password = stripcslashes($password);  
+    $username = mysqli_real_escape_string($con, $username);  
+    $password = mysqli_real_escape_string($con, $password);  
       
-        $sql = "SELECT *from login where Roll_no = '$username' and password = '$password'";  
-        $result = mysqli_query($con, $sql);  
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-        $count = mysqli_num_rows($result);  
-        if($count == 1){  
-            
-           header("Location: outpassform.php");
-        }  
-        else{  
-              
-            header("Location: student.php");
-        }   
+    $sql = "SELECT * FROM login WHERE Roll_no = '$username' AND password = '$password'";  
+    $result = mysqli_query($con, $sql);  
+    $count = mysqli_num_rows($result);  
+
+    if ($count == 1) {  
+        header("Location: outpassform.php");
+        exit(); // Make sure to exit after redirection
+    } else {  
+        // If username or password is incorrect
+        echo "<script>
+            alert('Username or password is incorrect. Please try again.');
+            window.location.href = 'student.php';
+        </script>";
+        exit(); // Exit to prevent further execution
+    }   
 ?>

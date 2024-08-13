@@ -255,40 +255,40 @@ ul li:hover {
   <h4 style="color: #27ae60;">UG Programmes</h4>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
-    <td style="padding: 8px; width: 50%;"><strong>B.E – Mechanical Engineering</strong> – 120 *</td>
-    <td style="padding: 8px; width: 50%;"><strong>B.E – Electronics and Communication Engineering</strong> – 120 *</td>
+    <td style="padding: 8px; width: 50%;"><strong>B.E – Mechanical Engineering</strong></td>
+    <td style="padding: 8px; width: 50%;"><strong>B.E – Electronics and Communication Engineering</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>B.E – Electrical & Electronics Engineering</strong> – 120 *</td>
-    <td style="padding: 8px;"><strong>B.E – Computer Science & Engineering</strong> – 120 *</td>
+    <td style="padding: 8px;"><strong>B.E – Electrical & Electronics Engineering</strong></td>
+    <td style="padding: 8px;"><strong>B.E – Computer Science & Engineering</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>B.E – Civil Engineering</strong> – 120 *</td>
-    <td style="padding: 8px;"><strong>B.Tech – Information Technology</strong> – 60 *</td>
+    <td style="padding: 8px;"><strong>B.E – Civil Engineering</strong></td>
+    <td style="padding: 8px;"><strong>B.Tech – Information Technology</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>B.Tech – Electronics and Instrumentation Engineering</strong> – 60 *</td>
-    <td style="padding: 8px;"><strong>B.Tech – Computer Science & Business Systems</strong> – 60 *</td>
+    <td style="padding: 8px;"><strong>B.Tech – Electronics and Instrumentation Engineering</strong></td>
+    <td style="padding: 8px;"><strong>B.Tech – Computer Science & Business Systems</strong></td>
   </tr>
 </table>
 
 <h4 style="color: #27ae60;">PG Programmes</h4>
 <table style="width: 100%; border-collapse: collapse;">
   <tr>
-    <td style="padding: 8px; width: 50%;"><strong>M.E – CAD/CAM</strong> – 18</td>
-    <td style="padding: 8px; width: 50%;"><strong>M.E – Computer Science & Engineering</strong> – 18</td>
+    <td style="padding: 8px; width: 50%;"><strong>M.E – CAD/CAM</strong></td>
+    <td style="padding: 8px; width: 50%;"><strong>M.E – Computer Science & Engineering</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>M.E – Structural Engineering</strong> – 24</td>
-    <td style="padding: 8px;"><strong>M.E – Embedded System Technologies</strong> – 18</td>
+    <td style="padding: 8px;"><strong>M.E – Structural Engineering</strong></td>
+    <td style="padding: 8px;"><strong>M.E – Embedded System Technologies</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>M.E – Applied Electronics</strong> – 18</td>
-    <td style="padding: 8px;"><strong>M.E – Power Electronics & Drives</strong> – 18</td>
+    <td style="padding: 8px;"><strong>M.E – Applied Electronics</strong></td>
+    <td style="padding: 8px;"><strong>M.E – Power Electronics & Drives</strong></td>
   </tr>
   <tr>
-    <td style="padding: 8px;"><strong>M.E – VLSI Design</strong> – 18</td>
-    <td style="padding: 8px;"><strong>M.C.A – Master of Computer Applications</strong> – 60</td>
+    <td style="padding: 8px;"><strong>M.E – VLSI Design</strong></td>
+    <td style="padding: 8px;"><strong>M.C.A – Master of Computer Applications</strong></td>
   </tr>
 </table>
 </div>
