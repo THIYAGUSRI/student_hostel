@@ -12,7 +12,6 @@
      <a class="active" href="history.php">History</a>
      <a href="https://drmcet.ac.in/hostel/">About</a>
      <a href="security.php">Security</a>
-     <a href="student_hostel/main.php">Home</a>
   </div>
 </div>
 

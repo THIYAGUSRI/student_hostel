@@ -38,6 +38,7 @@
                     alert("User Name and Password fields are empty");  
                     return false;  
                 }  
+        
                 else  
                 {  
                     if(id.length=="") {  

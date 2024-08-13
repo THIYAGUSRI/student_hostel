@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* General body and font settings */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
+/* Navigation bar styling */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background: linear-gradient(90deg, #4A90E2, #32CD32);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  border-radius: 8px;
 }
 
 .topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
-  font-size: 17px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .topnav a:hover {
@@ -31,119 +38,149 @@ body {
   background-color: #04AA6D;
   color: white;
 }
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 
-
-/* DEFAULTS */
-/* ========================================================================== */
-
-
-h1 {
-  color: hsla(32 50% 50% / .8);
-
-  position: fixed;
-  left: -100px;
-  top: 50%;
-  margin: 0;
-
-  transform: rotate(-90deg) translateY(-50%);
-}
-
-
-/* C */
-/* ========================================================================== */
+/* Carousel (slider) container and image settings */
 .c {
-  min-width: 700px;
   width: 100%;
   height: 600px;
-  border-radius: 12px;
-  padding: 20px;
-  padding-bottom: 40px;
-  box-shadow: 0 8px 48px 2px hsla(10 6% 15% / .4);
-  align-self: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-
-  position: relative;
   overflow: hidden;
-  background: hsl(0 0% 90%);
+  position: relative;
+  margin-bottom: 20px;
+}
 
-  box-sizing: border-box;
+.c input {
+  display: none;
 }
 
 .ci {
   position: absolute;
   top: 0;
   left: 0;
-
-  width: inherit;
-  height: inherit;
-  transform-origin: left 50%;
-
+  width: 100%;
+  height: 100%;
   background: inherit;
-
-  z-index: var(--z);
-  transition: .3s ease-out;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .ci img {
-  -moz-user-select: none;
-  user-select: none;
-  width: 100%;
-}
-
-
-
-input {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  z-index: -10;
-}
-
-label {
-  width: 10%;
-  height: 10px;
-  margin-right: 4px;
-  border-radius: 20px;
-
-  background: hsla(0 0% 90% / .3);
-  cursor: pointer;
-
-  position: relative;
-  z-index: 10;
-}
-
-label:last-child {
-  margin-right: 0;
-}
-
-input:checked+label {
-  background: linear-gradient(to right,
-    hsla(var(--hue) 80% 70% / .7),
-    hsla(calc(var(--hue) + 30) 80% 50% / .7));
-}
-
-input:not(:checked)+label+.ci {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-input:checked+label+.ci~.ci {
-  transform: translateX(100%);
-}
-
-input:not(:checked)+label+.ci {
-  transition: 0;
-}
-img{
   width: 100%;
   height: 600px;
+  object-fit: cover;
+  user-select: none;
 }
 
+/* Carousel control labels */
+label {
+  position: absolute;
+  bottom: 20px;
+  width: 14px;
+  height: 14px;
+  margin: 0 8px;
+  background: hsla(0, 0%, 90%, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
 
+label:hover {
+  transform: scale(1.2);
+}
+
+/* Carousel autoplay settings */
+@keyframes slide {
+  0% { opacity: 0; transform: translateX(-100%); }
+  10% { opacity: 1; transform: translateX(0); }
+  25% { opacity: 1; }
+  33% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 0; transform: translateX(100%); }
+}
+
+.ci:nth-child(3n+1) {
+  animation: slide 8s linear infinite;
+}
+
+.ci:nth-child(3n+2) {
+  animation: slide 8s linear infinite 2.67s;
+}
+
+.ci:nth-child(3n+3) {
+  animation: slide 8s linear infinite 5.33s;
+}
+
+/* Content section styling */
+.content {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #4A90E2;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #4A90E2, #32CD32);
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+h3 {
+  color: #2980b9;
+  margin-top: 30px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+h4 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  background: url('https://image.shutterstock.com/image-vector/checkmark-icon-symbol-tick-260nw-1699372953.jpg') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+ul li:hover {
+  background-color: #e9f5ff;
+  padding-left: 26px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .c {
+    height: 400px;
+  }
+
+  .ci img {
+    height: 400px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
 </style>
 </head>
 <body>
@@ -153,93 +190,108 @@ img{
   <a href="student.php">User Login</a>
   <a href="admin_hostel/admin.php">Admin login</a>
   <a href="newuser.php">New User</a>
+  <a href="admin_hostel/security.php">Security</a>
 </div>
-<br>
 
 <div class="c">
-  <input type="radio" name="a" id="cr-1" checked>
-  <label for="cr-1" style="--hue: 32"></label>
-  <div class="ci" style="--z: 4">
-    <img src="clg.jpg" alt="first silde">
+  <div class="ci">
+    <img src="clg.jpeg" alt="First slide">
   </div>
 
-  <input type="radio" name="a" id="cr-2">
-  <label for="cr-2" style="--hue: 82"></label>
-  <div class="ci" style="--z: 3">
-    <img src="R.jpeg" alt="second silde">
-</div>
-
-  <input type="radio" name="a" id="cr-3">
-  <label for="cr-3" style="--hue: 40"></label>
-  <div class="ci" style="--z: 2">
-    <img src="Re.jpeg" alt="thrid silde">
+  <div class="ci">
+    <img src="R.jpeg" alt="Second slide">
   </div>
 
-  <input type="radio" name="a" id="cr-4">
-  <label for="cr-4" style="--hue: 210"></label>
-  <div class="ci" style="--z: 1">
-    <img src="Reg.jpg" alt="fouth silde">
+  <div class="ci">
+    <img src="Re.jpeg" alt="Third slide">
+  </div>
+
+  <div class="ci">
+    <img src="Reg.jpeg" alt="Fourth slide">
   </div>
 </div>
-<div>
-  <p>
-  MCET - Realization of a grand dream
-Dr. Mahalingam College of Engineering and Technology ( MCET ) is a self-financing educational institution situated in Pollachi, Coimbatore District. MCET is the vision of Arutchelvar Dr. N. Mahalingam, whose determination and dynamism made possible the realization of this institution of excellence. MCET was established in 1998 to commemorate the 75th birthday of this great visionary Arutchelvar Dr. N. Mahalingam.
 
-Unique Facilities in the Campus
-* 1800+ computers * Single mode fiber optic cable connecting all 1800+ computers  * 200 Mbps internet connectivity * Computerized Library Functioning all 365 days * Modernized Boys & Girls Hostel with Internet Facilities * Multipurpose Indoor Sports Auditorium with 4000 seating capacity * World class Internet Data Center * Presence of various clubs viz Rotarct, Consumer, ECO, Renewable Energy, Fine Arts, Tamil Mandram etc., * Video Conferencing facilities. * Tele education facilities through Edusat * Yoga & Meditation Hall * Language Learning Centre * Driving School.
+<div class="content">
+  <h2>MCET - Realization of a Grand Dream</h2>
+  <p style="color: #34495e; font-size: 16px;">
+    <strong>Dr. Mahalingam College of Engineering and Technology (MCET)</strong> is a self-financing educational institution situated in Pollachi, Coimbatore District. MCET is the vision of Arutchelvar Dr. N. Mahalingam, whose determination and dynamism made possible the realization of this institution of excellence. MCET was established in 1998 to commemorate the 75th birthday of this great visionary Arutchelvar Dr. N. Mahalingam.
+  </p>
 
-MoUs with International Universities
-* Edith Cowan University, Australia * University of Cape Breton, Canada * University of Manitoba, Canada  * Cambrain college of Applied Arts and Technology, Canada * Northumbria University, UK
+  <h3>Unique Facilities in the Campus</h3>
+  <ul>
+    <li>1800+ computers</li>
+    <li>Single mode fiber optic cable connecting all 1800+ computers</li>
+    <li>200 Mbps internet connectivity</li>
+    <li>Computerized Library Functioning all 365 days</li>
+    <li>Modernized Boys & Girls Hostel with Internet Facilities</li>
+    <li>Multipurpose Indoor Sports Auditorium with 4000 seating capacity</li>
+    <li>World class Internet Data Center</li>
+    <li>Various clubs: Rotaract, Consumer, ECO, Renewable Energy, Fine Arts, Tamil Mandram, etc.</li>
+    <li>Video Conferencing facilities</li>
+    <li>Tele education facilities through Edusat</li>
+    <li>Yoga & Meditation Hall</li>
+    <li>Language Learning Centre</li>
+    <li>Driving School</li>
+  </ul>
 
-MoUs with Corporate World
-* Infosys-Campus Connect Programme * Caritor – Adept * Hexaware – Foundation Training Programme * Oracle – Workforce Development Programme.
+  <h3>MoUs with International Universities</h3>
+  <ul>
+    <li>Edith Cowan University, Australia</li>
+    <li>University of Cape Breton, Canada</li>
+    <li>University of Manitoba, Canada</li>
+    <li>Cambrian College of Applied Arts and Technology, Canada</li>
+    <li>Northumbria University, UK</li>
+  </ul>
 
-Courses Offered
-UG Programmes
-icon-14 B.E – Mechanical Engineering – 120 *
-icon-14 B.E – Electronics and Communication Engineering – 120 *
-icon-14 B.E – Electrical & Electronics Engineering – 120 *
-icon-14 B.E – Computer Science & Engineering – 120 * 
-icon-14 B.Tech – Information Technology – 120
-icon-14 B.E – Automobile Engineering – 60 *
-icon-14 B.E – Civil Engineering – 60 *
-icon-14 B.Tech – Artificial Intelligence & Data Science – 120
-icon-14 B.E – Computer Science & Engineering (Artificial Intelligence & Machine Learning)  – 60
-icon-14 B.E – Computer Science & Engineering (Cyber Security)  – 60
+  <h3>MoUs with Corporate World</h3>
+  <ul>
+    <li>Infosys - Campus Connect Programme</li>
+    <li>Caritor – Adept</li>
+    <li>Hexaware – Foundation Training Programme</li>
+    <li>Oracle – Workforce Development Programme</li>
+  </ul>
 
-* Tier 1 – Accredited by NBA
+  <h3>Courses Offered</h3>
+  <h4 style="color: #27ae60;">UG Programmes</h4>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="padding: 8px; width: 50%;"><strong>B.E – Mechanical Engineering</strong> – 120 *</td>
+    <td style="padding: 8px; width: 50%;"><strong>B.E – Electronics and Communication Engineering</strong> – 120 *</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>B.E – Electrical & Electronics Engineering</strong> – 120 *</td>
+    <td style="padding: 8px;"><strong>B.E – Computer Science & Engineering</strong> – 120 *</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>B.E – Civil Engineering</strong> – 120 *</td>
+    <td style="padding: 8px;"><strong>B.Tech – Information Technology</strong> – 60 *</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>B.Tech – Electronics and Instrumentation Engineering</strong> – 60 *</td>
+    <td style="padding: 8px;"><strong>B.Tech – Computer Science & Business Systems</strong> – 60 *</td>
+  </tr>
+</table>
 
-PG Programmes
-icon-14 M.E ( CAD/CAM ) – 6
-
-icon-14 M.E ( Embedded System Technologies )  – 12
-
-icon-14 M.E ( Computer Science and Engineering )
-
-icon-14 M.E (Communication Systems) – 12/
-
-icon-14 M.E (Structural Engineering) – 6
-
-icon-14 MCA – Master of Computer Applications – 60
-
-Research Programmes ( Ph.D)
-icon-14 Mechanical Engineering
-
-icon-14 Department of Physics
-
-icon-14 Computer Science and Engineering
-
-icon-14 Electronics and Communication Engineering
-
-icon-14 Civil Engineering
-
-icon-14 Department of Information Technology *
-
-icon-14 Department of Electrical & Electronics Engineering *
-
-icon-14 Department of Automobile Engineering *
-</p>
+<h4 style="color: #27ae60;">PG Programmes</h4>
+<table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="padding: 8px; width: 50%;"><strong>M.E – CAD/CAM</strong> – 18</td>
+    <td style="padding: 8px; width: 50%;"><strong>M.E – Computer Science & Engineering</strong> – 18</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>M.E – Structural Engineering</strong> – 24</td>
+    <td style="padding: 8px;"><strong>M.E – Embedded System Technologies</strong> – 18</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>M.E – Applied Electronics</strong> – 18</td>
+    <td style="padding: 8px;"><strong>M.E – Power Electronics & Drives</strong> – 18</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;"><strong>M.E – VLSI Design</strong> – 18</td>
+    <td style="padding: 8px;"><strong>M.C.A – Master of Computer Applications</strong> – 60</td>
+  </tr>
+</table>
 </div>
+
 </body>
 </html>
