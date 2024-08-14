@@ -8,7 +8,7 @@ $result = mysqli_query($con,"SELECT * FROM backup");
    <link rel = "stylesheet" type = "text/css" href = "style2.css">   
  <title> Requests</title>
  </head>
- <<?php include('history_header.php') ?>
+ <?php include('history_header.php') ?>
 <body>
 <?php
 if (mysqli_num_rows($result) > 0) {

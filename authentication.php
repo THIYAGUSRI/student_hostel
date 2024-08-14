@@ -1,4 +1,5 @@
-<?php      
+<?php 
+ // use for user login to fetch and check the correct the userid and password     
     include('connection.php');  
     $username = $_POST['user'];  
     $password = $_POST['pass'];  

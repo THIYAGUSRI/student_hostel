@@ -1,4 +1,5 @@
 <?php
+ // connect the database to out pass request form connection
 $servername='localhost';
 $username='root';
 $password='';

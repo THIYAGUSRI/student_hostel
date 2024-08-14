@@ -1,4 +1,5 @@
-<?php      
+<?php
+ // connect the database  to check history     
     $host = "localhost";  
     $user = "root";  
     $password = '';  

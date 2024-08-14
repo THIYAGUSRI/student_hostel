@@ -11,7 +11,6 @@
     <div class="header-right">
      <a class="active" href="history.php">History</a>
      <a href="https://drmcet.ac.in/hostel/">About</a>
-     <a href="main.php">home</a>
   </div>
 </div>
 

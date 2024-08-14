@@ -16,8 +16,13 @@
           
         if($count == 1){  
             header("Location: retrive.php"); 
+            exit();
         }  
         else{  
-           header("Location: admin.php");
+            echo "<script>
+            alert('Username or password is incorrect. Please try again.');
+            window.location.href = 'admin.php';
+        </script>";
+        exit();
         }     
 ?>

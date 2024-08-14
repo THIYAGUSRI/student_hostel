@@ -1,4 +1,5 @@
-<?php      
+<?php 
+//connect the database for new user form     
 include_once 'connectrform.php';
 if(isset($_POST['submit']))
 { 
