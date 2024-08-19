@@ -39,6 +39,8 @@ body{
 }
 .container form .form-row{
   display: flex;
+  flex-direction: column;
+  height: 1000px;
   margin: 32px 0;
 }
 form .form-row .input-data{
