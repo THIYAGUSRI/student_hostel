@@ -1,79 +1,226 @@
 <!DOCTYPE html>
-<!-- conecct with conn.php -->
-<html>
-    <head>
-       <title>
-        Regiter form
-       </title>
-       <link rel = "stylesheet" type = "text/css" href = "register.css">
-    </head>
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <style>
+        /* General Reset and Font Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('adm.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Title Text Styling */
+        .container .text {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            background: -webkit-linear-gradient(right, #56d8e4, #9f01ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styling */
+        form {
+            width: 100%;
+        }
+
+        /* Form Row Styles */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .input-data {
+            width: 48%;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .input-data input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background-color: #fafafa;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-data input:focus {
+            border-color: #56d8e4;
+        }
+
+        /* Floating Label Styles */
+        .input-data label {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            font-size: 16px;
+            color: #666;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .input-data input:focus + label,
+        .input-data input:not(:placeholder-shown) + label {
+            top: -12px;
+            left: 8px;
+            font-size: 12px;
+            color: #56d8e4;
+        }
+
+        /* Submit Button Styling */
+        .form-submit {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .form-submit input {
+            width: 50%;
+            padding: 12px 0;
+            background: linear-gradient(to right, #56d8e4, #9f01ea);
+            border: none;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit input:hover {
+            background: linear-gradient(to right, #9f01ea, #56d8e4);
+        }
+
+        /* Go Back Button */
+        .go-back-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #56d8e4;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #9f01ea;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px;
+            }
+
+            .container .text {
+                font-size: 24px;
+            }
+
+            .input-data {
+                width: 100%;
+            }
+
+            .form-submit input {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
 <body>
-   
-    <div class="container" style="height: 1000px;">
+    <div class="container">
         <div class="text">
-           New Register Form
+            New Register Form
         </div>
-        <form method="POST" action="conn.php" >
-         <!-- <div style="display:flex; flex-direction:column"> -->
-           <div class="form-row" style="display:flex; flex-direction:column;">
-              <div class="input-data">
-                 <input type="text" id="Roll_no" name="Roll_no"required>
-                 <div class="underline"></div>
-                 <label for="Roll_no">Roll NO</label>
-              </div>
-              <br/>
-              <div class="input-data">
-                 <input type="text" id="name"name="name"required>
-                 <div class="underline"></div>
-                 <label for="name">Name</label>
-              </div>
-           </div>
-           <div class="form-row" style="display:flex; flex-direction:column;">
-              <div class="input-data">
-                 <input type="password" id="password" name="password" required>
-                 <div class="underline"></div>
-                 <label for="password">Password</label>
-              </div>
-              <br/>
-              <div class="input-data">
-                 <input type="text" id="roomno" name="roomno" required>
-                 <div class="underline"></div>
-                 <label for="roomno">Room No</label>
-              </div>
-           </div>
-           <div class="form-row" style="display:flex; flex-direction:column;">
-            <div class="input-data">
-               <input type="text" id="class_coordinator" name="class_coordinator" required>
-               <div class="underline"></div>
-               <label for="class_coordinator">Class Coordinator Name</label>
+        <form method="POST" action="conn.php">
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="Roll_no" name="Roll_no" required placeholder=" ">
+                    <label for="Roll_no">Roll NO</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Name</label>
+                </div>
             </div>
-            <br/>
-            <div class="input-data">
-               <input type="text" id="HOD" name="HOD" required>
-               <div class="underline"></div>
-               <label for="HOD">HOD Name</label>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="password" id="password" name="password" required placeholder=" ">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="roomno" name="roomno" required placeholder=" ">
+                    <label for="roomno">Room No</label>
+                </div>
             </div>
-         </div> 
-         <div class="form-row" style="display:flex; flex-direction:column;">
-            <div class="input-data">
-               <input type="text" id="warden" name="warden" required>
-               <div class="underline"></div>
-               <label for="warden">Warden Name</label>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="class_coordinator" name="class_coordinator" required placeholder=" ">
+                    <label for="class_coordinator">Class Coordinator Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="HOD" name="HOD" required placeholder=" ">
+                    <label for="HOD">HOD Name</label>
+                </div>
             </div>
-            <br/>
-            <div class="input-data">
-               <input type="text" id="Phone_No" name="Phone_No" required>
-               <div class="underline"></div>
-               <label for="Phone_No">Phone No</label>
+            <div class="form-row">
+                <div class="input-data">
+                    <input type="text" id="warden" name="warden" required placeholder=" ">
+                    <label for="warden">Warden Name</label>
+                </div>
+                <div class="input-data">
+                    <input type="text" id="Phone_No" name="Phone_No" required placeholder=" ">
+                    <label for="Phone_No">Phone No</label>
+                </div>
             </div>
-         </div> 
-         <div class="input-data">
-               <div class="inner"></div>
-               <input type="submit" id="submit" name="submit" value="submit" style="align-items: center; width: 20%; margin-left: 35%;height: 40px; background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea); border-radius: 15px; font-size: 25px;">
+            <div class="form-submit">
+                <input type="submit" name="submit" value="Submit">
             </div>
+        </form>
+
+        <!-- Go Back Button -->
+        <div class="go-back-btn">
+            <a href="main.php" style="text-decoration: none; color: white;">Go Back</a>
         </div>
-        <!-- </div> -->
-        </form>     
+    </div>
 </body>
 </html>
