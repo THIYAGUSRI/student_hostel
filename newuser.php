@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
     <style>
-        /* General Reset and Font Setup */
         * {
             margin: 0;
             padding: 0;
@@ -14,7 +13,6 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        /* Body styling */
         body {
             display: flex;
             align-items: center;
@@ -27,7 +25,6 @@
             flex-direction: column;
         }
 
-        /* Container Styles */
         .container {
             max-width: 800px;
             width: 100%;
@@ -41,7 +38,6 @@
             justify-content: center;
         }
 
-        /* Title Text Styling */
         .container .text {
             font-size: 32px;
             font-weight: 600;
@@ -53,12 +49,10 @@
             margin-bottom: 30px;
         }
 
-        /* Form Styling */
         form {
             width: 100%;
         }
 
-        /* Form Row Styles */
         .form-row {
             display: flex;
             justify-content: space-between;
@@ -87,7 +81,6 @@
             border-color: #56d8e4;
         }
 
-        /* Floating Label Styles */
         .input-data label {
             position: absolute;
             left: 12px;
@@ -106,7 +99,6 @@
             color: #56d8e4;
         }
 
-        /* Submit Button Styling */
         .form-submit {
             display: flex;
             justify-content: center;
@@ -129,7 +121,6 @@
             background: linear-gradient(to right, #9f01ea, #56d8e4);
         }
 
-        /* Go Back Button */
         .go-back-btn {
             margin-top: 20px;
             padding: 10px 20px;
@@ -146,7 +137,6 @@
             background-color: #9f01ea;
         }
 
-        /* Responsive Styles */
         @media (max-width: 700px) {
             .container {
                 padding: 20px;
@@ -216,8 +206,6 @@
                 <input type="submit" name="submit" value="Submit">
             </div>
         </form>
-
-        <!-- Go Back Button -->
         <div class="go-back-btn">
             <a href="main.php" style="text-decoration: none; color: white;">Go Back</a>
         </div>
