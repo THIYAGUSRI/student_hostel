@@ -3,7 +3,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/* General body and font settings */
 body {
   margin: 0;
   font-family: 'Raleway', Arial, sans-serif;
@@ -11,7 +10,6 @@ body {
   color: #333;
 }
 
-/* Navigation bar styling */
 .topnav {
   overflow: hidden;
   background: linear-gradient(90deg, #4A90E2, #32CD32);
@@ -39,7 +37,6 @@ body {
   color: white;
 }
 
-/* Carousel (slider) container and image settings */
 .c {
   width: 100%;
   height: 600px;
@@ -69,7 +66,6 @@ body {
   user-select: none;
 }
 
-/* Carousel control labels */
 label {
   position: absolute;
   bottom: 20px;
@@ -86,7 +82,6 @@ label:hover {
   transform: scale(1.2);
 }
 
-/* Carousel autoplay settings */
 @keyframes slide {
   0% { opacity: 0; transform: translateX(-100%); }
   10% { opacity: 1; transform: translateX(0); }
@@ -107,7 +102,6 @@ label:hover {
   animation: slide 8s linear infinite 5.33s;
 }
 
-/* Content section styling */
 .content {
   width: 100%;
   background-color: #fff;
@@ -159,7 +153,6 @@ ul li:hover {
   padding-left: 26px;
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .c {
     height: 400px;

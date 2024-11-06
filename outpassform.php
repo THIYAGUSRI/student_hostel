@@ -1,7 +1,6 @@
 
 
 <!DOCTYPE html>
-<!-- conect with insert2 -->
 <html>
 <head>
 	<title>Gatepass form</title>

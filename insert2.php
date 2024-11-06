@@ -1,5 +1,4 @@
 <?php
-// outpass request form 
 include_once 'connectrform.php';
 if(isset($_POST['Request']))
 {    

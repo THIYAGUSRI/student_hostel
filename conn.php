@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
     $Phone_No = $_POST['Phone_No'];
     $HOD = $_POST['HOD'];
 
-    // Insert data into the database
+    
     $sql = "INSERT INTO login (Roll_no, password, name, roomno, class_coordinator, warden, Phone_No, HOD) 
             VALUES ('$Roll_no', '$password', '$name', '$roomno', '$class_coordinator', '$warden', '$Phone_No', '$HOD')";
 
